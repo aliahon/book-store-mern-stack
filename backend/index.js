@@ -37,6 +37,20 @@ app.post('/books', async(request, response)=>{
     }
 });
 
+//Route for Get All Books from db
+app.get('/books', async(request, response)=>{
+    try {
+        const books = await Book.find({});
+        response.status(200).json({
+            count: books.length,
+            data: books
+        });
+        
+    } catch (error) {
+        console.log(error.message);
+        response.status(500).send({message: error.message});
+    }
+});
 
 
 mongoose
