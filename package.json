@@ -9,5 +9,8 @@
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "notistack": "^3.0.1"
   }
 }
